@@ -29,7 +29,7 @@ export default function ProfilePage() {
     
     try {
       const { web3Service } = await import('@/lib/web3');
-      const roleNum = parseInt(selectedRole);
+      const roleNum = Number(selectedRole);
       await web3Service.requestUserRole(roleNum);
       
       // Refresh user data

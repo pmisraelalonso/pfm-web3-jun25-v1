@@ -124,7 +124,9 @@ class Web3Service {
   // User Management Methods
   async requestUserRole(role: number): Promise<void> {
     const contract = this.getContract();
-    const tx = await contract.requestUserRole(role);
+    const roleNames = ['Admin', 'Producer', 'Factory', 'Retailer', 'Consumer'];
+    const roleName = roleNames[role] || 'Consumer';
+    const tx = await contract.requestUserRole(roleName);
     await tx.wait();
   }
 

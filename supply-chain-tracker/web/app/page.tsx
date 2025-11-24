@@ -132,7 +132,7 @@ export default function Home() {
                 </p>
               </>
             ) : (
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <p className="text-sm text-green-600 dark:text-green-400 font-medium">
                   ✓ Connected
                 </p>
@@ -140,9 +140,18 @@ export default function Home() {
                   {account}
                 </p>
                 {!user && (
-                  <p className="text-sm text-amber-600 dark:text-amber-400">
-                    Please register your role to continue
-                  </p>
+                  <>
+                    <p className="text-sm text-amber-600 dark:text-amber-400">
+                      Please register your role to continue
+                    </p>
+                    <Button 
+                      onClick={() => router.push('/profile')} 
+                      className="w-full" 
+                      variant="outline"
+                    >
+                      Go to Profile & Register
+                    </Button>
+                  </>
                 )}
               </div>
             )}
